@@ -3,7 +3,7 @@ const carouselHeight = carousel.offsetHeight;
 const imgHeight = carouselHeight / 5;
 let counter = 0;
 
-//carousel
+//carousel for store page
 setInterval(() => {
   counter++;
   carousel.style.transition = 'transform 5s ease';
@@ -11,19 +11,17 @@ setInterval(() => {
   if (counter >= 5) {
     setTimeout(() => {
       carousel.style.transition = 'none';
-      carousel.style.transform = `translateY(-${(counter-4) * imgHeight}px)`;
+      carousel.style.transform = `translateY(-${(counter - 4) * imgHeight}px)`;
       counter = counter - 4;
     }, 5000);
   }
 }, 8000);
 
 
-(function() {
+(function () {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
+  //selector helper function
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -33,9 +31,7 @@ setInterval(() => {
     }
   }
 
-  /**
-   * Easy event listener function
-   */
+  //event listener function
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all)
 
@@ -48,9 +44,7 @@ setInterval(() => {
     }
   }
 
-  /**
-   * Scrolls to an element with header offset
-   */
+  // scrolls to an element with header offset
   const scrollto = (el) => {
     window.scrollTo({
       top: 0,
@@ -58,19 +52,8 @@ setInterval(() => {
     })
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '#navbar .nav-link', function(e) {
+  //scroll with offset on links with class name .scrollto
+  on('click', '#navbar .nav-link', function (e) {
     let section = select(this.hash)
     if (section) {
       e.preventDefault()
@@ -103,7 +86,7 @@ setInterval(() => {
 
       if (!header.classList.contains('header-top')) {
         header.classList.add('header-top')
-        setTimeout(function() {
+        setTimeout(function () {
           sections.forEach((item) => {
             item.classList.remove('section-show')
           })
@@ -121,9 +104,7 @@ setInterval(() => {
     }
   }, true)
 
-  /**
-   * Activate/show sections on load with hash links
-   */
+  //activate/show sections on load with hash links
   window.addEventListener('load', () => {
     if (window.location.hash) {
       let initial_nav = select(window.location.hash)
@@ -142,7 +123,7 @@ setInterval(() => {
           }
         })
 
-        setTimeout(function() {
+        setTimeout(function () {
           initial_nav.classList.add('section-show')
         }, 350);
 
@@ -150,100 +131,5 @@ setInterval(() => {
       }
     }
   });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  });
-
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-      }, true);
-    }
-
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Initiate portfolio details lightbox 
-   */
-  const portfolioDetailsLightbox = GLightbox({
-    selector: '.portfolio-details-lightbox',
-    width: '90%',
-    height: '90vh'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
 
 })()

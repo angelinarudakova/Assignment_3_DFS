@@ -1,3 +1,4 @@
+/* fonts installed */
 @font-face {
     font-family: Decondor;
     src: url('Decondor-Thin.ttf');
@@ -17,6 +18,7 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 
+/* global and main */
 
 head {
     display: none;
@@ -260,9 +262,6 @@ h3 {
 }
 
 
-
-/* arrow pointing down */
-
 /* carousel */
 
 .carousel-container {
@@ -343,7 +342,7 @@ h3 {
 
 
 
-
+/* animations! */
 @keyframes showup {
     0% {
         opacity: 0;
@@ -419,7 +418,7 @@ h3 {
 
 }
 
-/* About */
+/* about section on home page */
 
 #about {
     padding-top: 152.61px;
@@ -456,7 +455,7 @@ h3 {
 }
 
 
-/* Store */
+/* store section on home page*/
 
 #store {
     padding-top: 152.61px;
@@ -515,7 +514,7 @@ h3 {
 
 
 
-/* shop page css*/
+/* SHOP page css*/
 
 #catalogue .main-title {
     padding-top: 5rem;
@@ -531,24 +530,7 @@ h3 {
     animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-/**
- * ----------------------------------------
- * animation fade-in-top
- * ----------------------------------------
- */
-@-webkit-keyframes fade-in-top {
-    0% {
-        -webkit-transform: translateY(-50px);
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+/* animation fade-in-top */
 
 @keyframes fade-in-top {
     0% {
@@ -621,7 +603,7 @@ h3 {
     color: white;
     font-size: 25px;
     mix-blend-mode: hard-light;
-    
+
 }
 
 #contact .field {
@@ -760,7 +742,7 @@ footer {
 
 
 
-/* css for about page */
+/* css for ABOUT page */
 
 #main-about {
     padding-top: 152.61px;
@@ -833,9 +815,7 @@ a:hover {
     text-decoration: none;
 }
 
-/*--------------------------------------------------------------
-  # Header
-  --------------------------------------------------------------*/
+/* header of about page */
 #main-about #header {
     transition: ease-in-out 0.3s;
     position: relative;
@@ -917,7 +897,7 @@ a:hover {
 
 */
 
-/* Header Top */
+/* header top */
 #about-navbar .header-top .li {
     font-size: 25px;
 }
@@ -943,10 +923,9 @@ a:hover {
 }
 
 */
-/*--------------------------------------------------------------
-  # About
-  --------------------------------------------------------------*/
-#about-artist{
+
+/* about section on ABOUT page */
+#about-artist {
     padding-top: 151.53px;
     flex-direction: row;
     justify-content: space-between;
@@ -970,9 +949,7 @@ a:hover {
 
 
 
-/*--------------------------------------------------------------
-  # Socials
-  --------------------------------------------------------------*/
+/* socials section */
 .socials .icon-box {
     display: flex;
     align-items: center;
@@ -999,8 +976,6 @@ a:hover {
 .socials .icon-box:hover {
     background: rgba(255, 255, 255, 0.12);
 }
-
-
 
 
 
@@ -1063,9 +1038,7 @@ a:hover {
 
 
 
-/*--------------------------------------------------------------
-  # Testimonials
-  --------------------------------------------------------------*/
+/* testimonials section */
 
 #testimonials h2 {
     padding-bottom: 2rem;
@@ -1123,16 +1096,8 @@ a:hover {
     background-color: #C07937;
 }
 
-*/
 
-/* #main-about .testimonials .swiper-slide{
-    margin-left: 5rem;
-   }
-
-  
-  /*--------------------------------------------------------------
-  # Services
-  --------------------------------------------------------------*/
+  /* services section */
 .services .icon-box {
     text-align: center;
     background: rgba(204, 204, 204, 0.1);
